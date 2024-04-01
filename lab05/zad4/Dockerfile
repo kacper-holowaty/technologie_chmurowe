@@ -1,0 +1,2 @@
+ARG ALPINE_VERSION
+FROM python:${ALPINE_VERSION}-alpine
