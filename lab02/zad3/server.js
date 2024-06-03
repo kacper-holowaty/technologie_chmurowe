@@ -17,30 +17,16 @@ app.get("/", async (_, res) => {
       .db("stepikbaza")
       .collection("persons")
       .find({ id: 33 })
-      .toArray(); // Dodano toArray() aby przekształcić wyniki do tablicy
+      .toArray();
 
-    res.status(200).json(stats); // Zwrócono wyniki do klienta HTTP
-
-    //client.close(); // Ten kod musi być przeniesiony z tego miejsca, patrz uwaga poniżej.
+    res.status(200).json(stats);
   } catch (error) {
     console.error("Błąd:", error);
-    res.status(500).send("Wystąpił błąd"); // W przypadku błędu zwracamy status 500
+    res.status(500).send("Wystąpił błąd");
   } finally {
-    await client.close(); // Zamykamy połączenie z bazą danych
+    await client.close();
   }
 });
-
-// app.get("/", async (_, res) => {
-//   await client.connect();
-
-//   const stats = await client
-//     .db("stepikbaza")
-//     .collection("persons")
-//     .find({ id: 33 });
-//   res.status(200).json(stats);
-
-//   client.close();
-// });
 
 app.listen(8080, () => {
   console.log("Uruchomiono na porcie 8080...");

@@ -1,0 +1,13 @@
+docker build -t stepik9zad1 .
+
+docker login
+
+docker tag stepik9zad1 kacperholowaty/stepik9zad1:latest
+
+docker push kacperholowaty/stepik9zad1:latest
+
+kubectl apply -f zad1.yaml
+
+kubectl get pods
+
+kubectl exec -it stepik9-zad1-pod -- /bin/bash

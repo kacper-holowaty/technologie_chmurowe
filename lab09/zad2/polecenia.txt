@@ -1,0 +1,13 @@
+docker build -t stepik9zad2 .
+
+docker tag stepik9zad2 kacperholowaty/stepik9zad2:latest
+
+docker push kacperholowaty/stepik9zad2:latest
+
+kubectl apply -f nginx-deployment.yaml
+
+kubectl apply -f nginx-service.yaml
+
+kubectl get pods
+
+kubectl get svc

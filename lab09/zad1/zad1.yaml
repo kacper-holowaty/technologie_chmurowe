@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stepik9-zad1-pod
+spec:
+  containers:
+    - name: hello-world-container
+      image: kacperholowaty/stepik9zad1:latest
+      ports:
+        - containerPort: 3000

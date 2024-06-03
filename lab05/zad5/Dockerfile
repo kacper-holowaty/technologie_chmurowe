@@ -5,7 +5,6 @@ RUN apt-get install -y nodejs
 WORKDIR /app
 COPY ./app /app
 RUN npm install
-CMD ["npm", "start"]
 
 
 FROM nginx:latest
